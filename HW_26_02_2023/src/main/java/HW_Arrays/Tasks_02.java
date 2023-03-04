@@ -1,6 +1,7 @@
 package HW_Arrays;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Tasks_02 {
     /**
@@ -28,9 +29,10 @@ public class Tasks_02 {
      */
 
     public static void main(String[] args) {
-        int[] num = {9};
-        int count = 100;
-        addNumberArray(num, count);
+        int[] num = {1, 9 , 9};
+        int count = 1;
+//        addNumberArray(num, count);
+        addNumberArrEx2(num, count);
     }
     public static void addNumberArray (int[] num, int count) {
         String str = "";
@@ -48,4 +50,23 @@ public class Tasks_02 {
         System.out.println("old array: " + Arrays.toString(num));
         System.out.println("new array: " + Arrays.toString(arr));
     }
+
+    public static void addNumberArrEx2(int[] nums, int count) {
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] != 9) {
+                nums[i] = nums[i] + 1;
+                break;
+            } else {
+                nums[i] = 0;
+            }
+        }
+        if (nums[0] == 0) {
+            int[] array = new int[nums.length + 1];
+            array[0] = 1;
+            nums = array;
+        }
+        System.out.println(Arrays.toString(nums));
+
+    }
 }
+
