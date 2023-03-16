@@ -28,14 +28,14 @@ public class HomeWork_03_03_23 {
      * Output: 3
      * Example 3:
      * Input: list = [1]
-     * Output: 1
      */
-    private static final ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3));
+    private static final ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(1));
     private static final ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2, 4, 5, 6, 8, 9));
 
     public static void main(String[] args) {
         System.out.println(getNewArrSort(list1, list2));
         System.out.println(getMiddleElement(list2));
+        getMiddle(list1);
 
     }
 
@@ -43,7 +43,7 @@ public class HomeWork_03_03_23 {
     public static ArrayList<Integer> getNewArrSort(ArrayList<Integer> list1, ArrayList<Integer> list2) {
         ArrayList<Integer> uniteArrList = new ArrayList<>();
 
-        for (int i = 0; i <= list1.size()-1 + list2.size()-1; i++) {
+        for (int i = 0; i <= list1.size() - 1 + list2.size() - 1; i++) {
             if (i < list1.size() && i < list2.size()) {
                 if (list1.get(i) < list2.get(i)) {
                     uniteArrList.add(list1.get(i));
@@ -89,7 +89,7 @@ public class HomeWork_03_03_23 {
 
     //  Task 2.
 
-    public static int getMiddleElement (ArrayList<Integer> nums) {
+    public static int getMiddleElement(ArrayList<Integer> nums) {
         int x = 0;
         int count = 0;
         int tmp = 0;
@@ -102,10 +102,28 @@ public class HomeWork_03_03_23 {
             count++;
         }
         for (int i = 0; i <= count / 2; i++) {
-        if (it.hasNext())  tmp = it.next();
+            if (it.hasNext()) tmp = it.next();
         }
-         x = tmp;
+        x = tmp;
         return x;
+    }
+
+    public static void getMiddle(ArrayList list3) {
+        System.out.println("Найти средний элемент в ArrayList " + list3);
+        Iterator<Integer> firstFlag = list3.iterator();
+        Iterator<Integer> secondFlag = list3.iterator();
+        firstFlag.next();
+
+        int a = secondFlag.next();
+        while (firstFlag.hasNext()) {
+
+            firstFlag.next();
+            firstFlag.next();
+
+            a = secondFlag.next();
+
+        }
+        System.out.println("средний элемент равен  " + a);
     }
 
 }
