@@ -52,6 +52,7 @@ public class Task_3 {
                     value += 1;
                 }
             }
+            map.put(key, value);
         if (value != 0 ) System.out.println("Символ \"" + key + "\" встречается -> " +  value + " раз.");
         }
     }
