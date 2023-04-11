@@ -1,0 +1,65 @@
+Описание задания.
+
+ 1 уровень сложности:
+
+ Task 1. Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+Example 1:
+Input: s = "leetcode"
+Output: 0
+Example 2:
+Input: s = "loveleetcode"
+Output: 2
+Example 3:
+Input: s = "aabb"
+Output: -1
+Подсказка: можно решить, используя HashMap.
+
+Task 2. Что выведет фрагмент кода? Объяснить.
+import java.util.HashSet;
+class Person {
+   String name;
+   Person(String name) { this.name = name; }
+   public String toString() { return name; }
+}
+class TestHashSet {
+   public static void main(String args[]) {
+       HashSet set = new HashSet<>();
+       Person p1 = new Person("Иван");
+       Person p2 = new Person("Мария");
+       Person p3 = new Person("Пётр");
+       Person p4 = new Person("Мария");
+       set.add(p1);
+       set.add(p2);
+       set.add(p3);
+       set.add(p4);
+       System.out.print(set.size());
+   }
+}
+
+
+Task 3. Дана строка. Вывести количество появлений каждого символа в этой строке. Например:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu feugiat tellus. Nam molestie diam sed libero egestas pellentesque. Nulla.
+
+
+Символ e встречается 20 раз.
+Символ пробел/space встречается 19 раз.
+Символ l встречается 11 раз.
+Символ i встречается 11 раз.
+Символ t встречается 11 раз.
+Символ s встречается 10 раз.
+Символ u встречается 7 раз.
+Символ a встречается 7 раз.
+Символ n встречается 6 раз.
+Символ m встречается 6 раз.
+Символ o встречается 6 раз.
+Символ r встречается 5 раз.
+Символ . встречается 4 раз.
+Символ g встречается 4 раз.
+Символ d встречается 4 раз.
+Символ c встречается 3 раз.
+Символ p встречается 3 раз.
+Символ , встречается 1 раз.
+Символ f встречается 1 раз.
+Символ b встречается 1 раз.
+Символ q встречается 1 раз.
