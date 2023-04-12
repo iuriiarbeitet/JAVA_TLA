@@ -20,33 +20,31 @@
 
 public class Task4 {
     public static void main(String[] args) {
-        int r = 5;
-        int l = 5;
-        int[][] dobleArray = new int[r][l];
-        findPick(r, l); // поиск пиков
+       findPick(3, 3); // поиск пиков
     }
 
     static void findPick(int r, int l) {
         int pick;
-        int[][] helpArray = new int[r + 2][l + 2];
-        for (int i = 0; i < helpArray.length; i++) {
-            for (int j = 0; j < helpArray[i].length; j++) {
-                if (i == 0 | j == 0 | i == helpArray.length - 1 | j == helpArray[i].length - 1) {
-                    helpArray[i][j] = -1;
+        int[][] biArr = new int[r + 2][l + 2];
+        for (int i = 0; i < biArr.length; i++) {
+            for (int j = 0; j < biArr[i].length; j++) {
+                if (i == 0 | j == 0 | i == biArr.length - 1 | j == biArr[i].length - 1) {
+                    biArr[i][j] = -1;
                 } else {
-                    helpArray[i][j] = (int) (Math.random() * 30);
-                    System.out.print(helpArray[i][j] + " ");
+                    biArr[i][j] = (int) (Math.random() * 100);
+                    if (biArr[i][j] < 10) System.out.print("  " + biArr[i][j]);
+                    else System.out.print(" " + biArr[i][j]);
                 }
             }
             System.out.println();
         }
-        for (int i = 1; i < helpArray.length - 1; i++) {
-            for (int j = 1; j < helpArray[i].length - 1; j++) {
+        for (int i = 1; i < biArr.length - 1; i++) {
+            for (int j = 1; j < biArr[i].length - 1; j++) {
 
-                if (helpArray[i][j] >= helpArray[i - 1][j] && helpArray[i][j] >= helpArray[i][j - 1]
-                        && helpArray[i][j] >= helpArray[i + 1][j] && helpArray[i][j] >= helpArray[i][j + 1]) {
-                    pick = helpArray[i][j];
-                    System.out.println(pick + " является пиковым числом");
+                if (biArr[i][j] >= biArr[i - 1][j] && biArr[i][j] >= biArr[i][j - 1]
+                        && biArr[i][j] >= biArr[i + 1][j] && biArr[i][j] >= biArr[i][j + 1]) {
+                    pick = biArr[i][j];
+                    System.out.println(pick + " --> пиковый элемент");
                 }
             }
         }
