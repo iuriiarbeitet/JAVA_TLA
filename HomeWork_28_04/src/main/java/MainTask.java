@@ -24,7 +24,7 @@
 
 public class MainTask {
     public static void main(String[] args) {
-        System.out.println(isFound("aa", "a*"));
+        System.out.println(isFound("b", "ba*"));
     }
     public static boolean isFound(String s, String p) {
         int a = s.length();
