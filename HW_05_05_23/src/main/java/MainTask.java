@@ -1,4 +1,7 @@
-import java.util.Stack;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  *  Given a string containing just the characters '(' and ')',
@@ -24,6 +27,8 @@ public class MainTask {
         System.out.println("result --> " + getParEx1("(()))"));
         System.out.println("result --> " + getParEx2(")()()())()("));
         System.out.println("result --> " + getParEx3(")()()())()("));
+        System.out.println("result --> " + getParEx4(")()()())()("));
+
     }
     public static int getParEx1(String s) {
         int count = 0;
@@ -71,5 +76,13 @@ public class MainTask {
             }
         }
         return stack1.size() < stack2.size() ? stack1.size() * 2 : stack2.size() * 2;
+    }
+
+    public static int getParEx4(String s){
+
+        int a = Arrays.stream(s.split("")).filter(x -> x.equals(")")).toArray().length;
+        int b = Arrays.stream(s.split("")).filter(x -> x.equals("(")).toArray().length;
+
+        return (a <= b) ? (a * 2) : (b * 2);
     }
 }
